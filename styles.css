@@ -1,0 +1,126 @@
+*{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+background-color: #b8dbff;
+color:#23374D;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color:#9dccfa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-heading {
+  text-align: center;
+  color: #23374D;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* PatienSection */
+.patientinfo {
+  background-color: #23374D;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.patientinfo h2 {
+  color: #EEEEEE;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* same for all */
+.fgroup {
+  margin-bottom: 15px;
+}
+
+.fgroup label {
+  display: block;
+  margin-bottom: 5px;
+  color: #EEEEEE;
+  font-weight: bold;
+}
+
+.fgroup input,
+.fgroup select,
+.fgroup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #23374D;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+}
+
+/* radio buttons css 🦁*/
+.fgroup-radio {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.fgroup-radio .fgroup {
+  width: 48%;
+}
+
+.radio-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.fgroup input[type="radio"] {
+  margin-right: 5px;
+  margin-left: 0;
+  width: 10px;
+}
+
+.fgroup input[type="radio"] + label {
+  display: inline-block;
+  margin-right: 10px;
+  color:#EEEEEE;
+  font-weight: normal;
+}
+
+.fgroup input[type="radio"]:checked + label {
+  color: #1089FF;
+  font-weight: bold;
+}
+
+/* ek row me 2 feild🦁*/
+.fgroup-inline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.fgroup-inline .fgroup {
+  width: 48%;
+}
+
+/* submit button 🦁*/
+button {
+  background-color: #1089FF;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #23374D;
+}
+
