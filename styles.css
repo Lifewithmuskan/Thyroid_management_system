@@ -1,44 +1,47 @@
-*{
+/* Global Styles */
+* {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-background-color: #b8dbff;
-color:#23374D;
+  background-color: #EAF2F8; /* Soft, calming blue-gray */
+  color: #2C3E50; /* Professional dark gray-blue */
 }
 
 .container {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-  background-color:#9dccfa;
+  background-color: #FFFFFF; /* Clean white background */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-heading {
   text-align: center;
-  color: #23374D;
+  color: #2C3E50;
   font-size: 36px;
   margin-bottom: 30px;
 }
 
-/* PatienSection */
+/* Patient Info Section */
 .patientinfo {
-  background-color: #23374D;
+  background-color: #D6EAF8; /* Light, professional blue */
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
 .patientinfo h2 {
-  color: #EEEEEE;
+  color: #154360; /* Darker blue for headings */
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* same for all */
+/* Form Elements */
 .fgroup {
   margin-bottom: 15px;
 }
@@ -46,7 +49,7 @@ color:#23374D;
 .fgroup label {
   display: block;
   margin-bottom: 5px;
-  color: #EEEEEE;
+  color: #2C3E50; /* Dark gray-blue */
   font-weight: bold;
 }
 
@@ -55,13 +58,13 @@ color:#23374D;
 .fgroup textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #23374D;
+  border: 1px solid #AAB7B8; /* Light gray border */
   border-radius: 4px;
   background-color: #FFFFFF;
   font-size: 16px;
 }
 
-/* radio buttons css 🦁*/
+/* Radio Buttons */
 .fgroup-radio {
   display: flex;
   justify-content: space-between;
@@ -88,16 +91,16 @@ color:#23374D;
 .fgroup input[type="radio"] + label {
   display: inline-block;
   margin-right: 10px;
-  color:#EEEEEE;
+  color: #2C3E50;
   font-weight: normal;
 }
 
 .fgroup input[type="radio"]:checked + label {
-  color: #1089FF;
+  color: #1B4F72; /* Slightly darker blue for selected radio buttons */
   font-weight: bold;
 }
 
-/* ek row me 2 feild🦁*/
+/* Inline Fields */
 .fgroup-inline {
   display: flex;
   justify-content: space-between;
@@ -109,18 +112,28 @@ color:#23374D;
   width: 48%;
 }
 
-/* submit button 🦁*/
+/* Submit Button */
 button {
-  background-color: #1089FF;
+  background-color: #1B4F72; /* Deep hospital blue */
   color: #FFFFFF;
   border: none;
   padding: 12px 20px;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #23374D;
+  background-color: #154360; /* Slightly darker blue */
 }
 
+/* Patient Info Text Color */
+.patientinfo {
+  color: #2C3E50;
+}
+button.printbutton {
+  display: flex;
+  float: right;
+  margin: 30px;
+}

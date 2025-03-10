@@ -9,30 +9,30 @@
 <body>
     <div class="container">
         <h1 class="main-heading">THYROID MANAGEMENT SYSTEM</h1>
+
+        <!-- Patient Info Section -->
         <section class="patientinfo">
             <h2>PATIENT INFORMATION</h2>
             <form id="patientForm">
-                <div class="fgroup-inline"> <!-- 2 div ko ek row me shift krne ke liye hai  -->
+                <div class="fgroup-inline">
                     <div class="fgroup">
                         <label for="firstName">First Name:</label>
-                        <input type="text" placeholder="firstName" required>
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
                     </div>
                     <div class="fgroup">
                         <label for="lastName">Last Name:</label>
-                        <input type="text" placeholder="lastName" required>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
                     </div>
                 </div>
-
 
                 <div class="fgroup-inline">
                     <div class="fgroup">
                         <label for="age">Age:</label>
-                        <input type="number" placeholder="age" required>
+                        <input type="number" id="age" name="age" placeholder="Age" required>
                     </div>
                     <div class="fgroup">
                         <label for="sex">Sex:</label>
-
-                        <select aria-placeholder="sex" required>
+                        <select id="sex" name="sex" required>
                             <option value="">Select</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -40,80 +40,109 @@
                     </div>
                 </div>
 
-
-
                 <div class="fgroup-inline">
                     <div class="fgroup">
                         <label for="aadhar">Aadhar Number:</label>
-                        <input type="text" placeholder="aadhar" required>
+                        <input type="text" id="aadhar" name="aadhar" placeholder="Aadhar Number" required>
                     </div>
                     <div class="fgroup">
                         <label for="email">Email:</label>
-                        <input type="email" placeholder="email" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
                 </div>
-                
-    
+
                 <div class="fgroup">
                     <label for="address">Address:</label>
-                    <textarea placeholder="address" rows="3" required></textarea>
+                    <textarea id="address" name="address" placeholder="Address" rows="3" required></textarea>
                 </div>
-                
-                 
+
                 <div class="fgroup">
-                        <label for="mobile">Mobile Number:</label>
-                        <input type="tel" placeholder="mobile" required>
-                    </div>
-             
-                
-                
-                    <div class="fgroup-radio">
-                        <div class="fgroup">
-                            <label for="alcoholYes">Alcohol Consumption:</label>
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required>
+                </div>
 
-                            <div class="radio-options">
-                                <input type="radio" value="yes" required>
-                                <label for="alcoholYes">Yes</label>
-                                <input type="radio"  value="no" required>
-                                <label for="alcoholNo">No</label>
-                            </div>
-                        </div>
-                        <div class="fgroup">
-                            <label for="smokingYes">Smoking:</label>
-                            <div class="radio-options">
-                                <input type="radio" value="yes" required>
-                                <label for="smokingYes">Yes</label>
-                                <input type="radio" value="no" required>
-                                <label for="smokingNo">No</label>
-                            </div>
-                        </div>
+                <div class="fgroup">
+                    <label>Alcohol Consumption:</label>
+                    <div class="radio-options">
+                        <input type="radio" id="alcoholYes" name="alcohol" value="yes">
+                        <label for="alcoholYes">Yes</label>
+                        <input type="radio" id="alcoholNo" name="alcohol" value="no">
+                        <label for="alcoholNo">No</label>
                     </div>
-                    
-                    <div class="fgroup-radio">
-                        <div class="fgroup">
-                            <label for="autoimmuneYes">Autoimmune Disorders:</label>
-                            <div class="radio-options">
-                                <input type="radio" class="same" value="yes" required>
-                                <label for="autoimmuneYes">Yes</label>
-                                <input type="radio" value="no" required>
-                                <label for="autoimmuneNo">No</label>
-                            </div>
-                        </div>
-                        <div class="fgroup">
-                            <label for="menstruationYes">Menstruation:</label>
-                            <div class="radio-options">
-                                <input type="radio" value="yes" required>
-                                <label for="menstruationYes">Yes</label>
-                                <input type="radio"  value="no" required>
-                                <label for="menstruationNo">No</label>
-                            </div>
-                        </div>
-                    </div>
-                    
+                </div>
 
-                <button type="submit">Submit</button>
+                <div class="fgroup">
+                    <label>Smoking:</label>
+                    <div class="radio-options">
+                        <input type="radio" id="smokingYes" name="smoking" value="yes">
+                        <label for="smokingYes">Yes</label>
+                        <input type="radio" id="smokingNo" name="smoking" value="no">
+                        <label for="smokingNo">No</label>
+                    </div>
+                </div>
             </form>
         </section>
+
+        <!-- Thyroid Conditions Section -->
+        <section class="patientinfo">
+            <h2>Thyroid Conditions</h2>
+            <div class="condition-selector">
+                <label for="condition">Select Condition:</label>
+                <select id="condition" name="condition" onchange="toggleConditions()">
+                    <option value="">Select Condition</option>
+                    <option value="hypothyroidism">Hypothyroidism</option>
+                    <option value="hyperthyroidism">Hyperthyroidism</option>
+                </select>
+            </div>
+
+            <!-- Hypothyroidism Symptoms -->
+            <div id="hypothyroidism" class="condition-fields" style="display: none;">
+                <h3>HYPOTHYROIDISM</h3>
+                <ul>
+                    <li><input type="checkbox" id="hypoWeightGain" name="hypothyroidismSymptoms" value="Weight gain"> <label for="hypoWeightGain">Weight gain</label></li>
+                    <li><input type="checkbox" id="hypoConstipation" name="hypothyroidismSymptoms" value="Constipation"> <label for="hypoConstipation">Constipation</label></li>
+                    <li><input type="checkbox" id="hypoBradycardia" name="hypothyroidismSymptoms" value="Bradycardia"> <label for="hypoBradycardia">Bradycardia</label></li>
+                    <li><input type="checkbox" id="hypoColdIntolerance" name="hypothyroidismSymptoms" value="Cold Intolerance"> <label for="hypoColdIntolerance">Cold Intolerance</label></li>
+                    <li><input type="checkbox" id="hypoDepression" name="hypothyroidismSymptoms" value="Depression"> <label for="hypoDepression">Depression</label></li>
+                    <li><input type="checkbox" id="hypoIrritability" name="hypothyroidismSymptoms" value="Irritability"> <label for="hypoIrritability">Irritability</label></li>
+                    <li><input type="checkbox" id="hypoMusclePain" name="hypothyroidismSymptoms" value="Muscle pain/Joint pain"> <label for="hypoMusclePain">Muscle pain/Joint pain</label></li>
+                    <li><input type="checkbox" id="hypoPuffyFace" name="hypothyroidismSymptoms" value="Puffy face"> <label for="hypoPuffyFace">Puffy face</label></li>
+                    <li><input type="checkbox" id="hypoBrittleNails" name="hypothyroidismSymptoms" value="Brittle nails"> <label for="hypoBrittleNails">Brittle nails</label></li>
+                    <li><input type="checkbox" id="hypoMenorrhagia" name="hypothyroidismSymptoms" value="Menorrhagia"> <label for="hypoMenorrhagia">Menorrhagia</label></li>
+                    <li><input type="checkbox" id="hypoOligomenorrhea" name="hypothyroidismSymptoms" value="Oligomenorrhea"> <label for="hypoOligomenorrhea">Oligomenorrhea</label></li>
+                    <li><input type="checkbox" id="hypoDecreasedSweating" name="hypothyroidismSymptoms" value="Decreased sweating"> <label for="hypoDecreasedSweating">Decreased sweating</label></li>
+                    <li><input type="checkbox" id="hypoFatigue" name="hypothyroidismSymptoms" value="Fatigue"> <label for="hypoFatigue">Fatigue</label></li>
+                    <li><input type="checkbox" id="hypoHairLoss" name="hypothyroidismSymptoms" value="Hairloss"> <label for="hypoHairLoss">Hairloss</label></li>
+                    <li><input type="checkbox" id="hypoInsomnia" name="hypothyroidismSymptoms" value="Insomnia"> <label for="hypoInsomnia">Insomnia</label></li>
+                </ul>
+            </div>
+
+            <!-- Hyperthyroidism Symptoms -->
+            <div id="hyperthyroidism" class="condition-fields" style="display: none;">
+                <h3>HYPERTHYROIDISM</h3>
+                <ul>
+                    <li><input type="checkbox" id="hyperWeightLoss" name="hyperthyroidismSymptoms" value="Weight loss"> <label for="hyperWeightLoss">Weight loss</label></li>
+                    <li><input type="checkbox" id="hyperDiarrhoea" name="hyperthyroidismSymptoms" value="Diarrhoea"> <label for="hyperDiarrhoea">Diarrhoea</label></li>
+                    <li><input type="checkbox" id="hyperTachycardia" name="hyperthyroidismSymptoms" value="Tachycardia"> <label for="hyperTachycardia">Tachycardia</label></li>
+                    <li><input type="checkbox" id="hyperHotIntolerance" name="hyperthyroidismSymptoms" value="Hot intolerance"> <label for="hyperHotIntolerance">Hot intolerance</label></li>
+                    <li><input type="checkbox" id="hyperNervousness" name="hyperthyroidismSymptoms" value="Nervousness"> <label for="hyperNervousness">Nervousness</label></li>
+                    <li><input type="checkbox" id="hyperAnxiety" name="hyperthyroidismSymptoms" value="Anxiety"> <label for="hyperAnxiety">Anxiety</label></li>
+                    <li><input type="checkbox" id="hyperMuscleWeakness" name="hyperthyroidismSymptoms" value="Muscle weakness"> <label for="hyperMuscleWeakness">Muscle weakness</label></li>
+                    <li><input type="checkbox" id="hyperBulgingEyes" name="hyperthyroidismSymptoms" value="Bulging eyes"> <label for="hyperBulgingEyes">Bulging eyes</label></li>
+                    <li><input type="checkbox" id="hyperNailIssues" name="hyperthyroidismSymptoms" value="Nail thickening/flaking"> <label for="hyperNailIssues">Nail thickening/flaking</label></li>
+                    <li><input type="checkbox" id="hyperPolymenorrhea" name="hyperthyroidismSymptoms" value="Polymenorrhea"> <label for="hyperPolymenorrhea">Polymenorrhea</label></li>
+                    <li><input type="checkbox" id="hyperHeavySweating" name="hyperthyroidismSymptoms" value="Heavy sweating"> <label for="hyperHeavySweating">Heavy sweating</label></li>
+                    <li><input type="checkbox" id="hyperFatigue" name="hyperthyroidismSymptoms" value="Fatigue"> <label for="hyperFatigue">Fatigue</label></li>
+                    <li><input type="checkbox" id="hyperInsomnia" name="hyperthyroidismSymptoms" value="Insomnia"> <label for="hyperInsomnia">Insomnia</label></li>
+                    <li><input type="checkbox" id="hyperHairLoss" name="hyperthyroidismSymptoms" value="Hairloss"> <label for="hyperHairLoss">Hairloss</label></li>
+                </ul>
+            </div>
+        </section>
     </div>
+
+    <!-- Print Button -->
+    <button type="button printbutton" onclick="printFilledFields()">Print</button>
+
+    <script src="index.js"></script>
 </body>
 </html>
